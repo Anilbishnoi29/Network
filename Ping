@@ -1,0 +1,47 @@
+# Ping a host once
+ping example.com
+
+# Ping a host multiple times (default count is 4)
+ping example.com
+
+# Ping a host a specified number of times
+ping -n 10 example.com
+
+# Ping a host and display the round-trip time (RTT) for each packet
+ping -n example.com
+
+# Ping a host and specify the size of the ICMP packet
+ping -l 1000 example.com
+
+# Ping a host and specify the time to live (TTL) value
+ping -i 5 example.com
+
+# Ping a host continuously (until interrupted)
+ping -t example.com
+
+# Ping a host and resolve the IP address to a hostname
+ping -a example.com
+
+# Ping a host using IPv6
+ping -6 example.com
+
+# Ping a host and specify the source IP address
+ping -S 192.0.2.1 example.com
+
+# Ping a host and specify the timeout value (in milliseconds)
+ping -w 2000 example.com
+
+# Ping a host and record the route (trace) to the destination
+ping -R example.com
+
+# Ping a host and display verbose output (including ICMP packet details)
+ping -v example.com
+
+# Ping a host and suppress output except for summary statistics
+ping -q example.com
+
+# Ping a host and specify the interval between packets (in milliseconds)
+ping -i 1000 example.com
+
+# Ping a host and specify the interface to use
+ping -I eth0 example.com
