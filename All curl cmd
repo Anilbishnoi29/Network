@@ -1,0 +1,356 @@
+# Basic HTTP GET request
+curl http://example.com
+
+# Specify request method
+curl -X GET http://example.com
+
+# Save the output to a file
+curl http://example.com -o output.html
+
+# Follow redirects
+curl -L http://example.com
+
+# Specify user-agent
+curl -A "Mozilla/5.0" http://example.com
+
+# Send POST data
+curl -X POST http://example.com/login -d "username=user&password=pass"
+
+# Include headers
+curl -H "Content-Type: application/json" http://example.com/api
+
+# Send a file as POST data
+curl -X POST http://example.com/upload -F "file=@localfile.txt"
+
+# Basic authentication
+curl -u username:password http://example.com
+
+# Ignore SSL certificate verification
+curl -k https://example.com
+
+# Set timeout
+curl --connect-timeout 10 http://example.com
+
+# Resume interrupted download
+curl -C - -O http://example.com/largefile.zip
+
+# Limit transfer rate
+curl --limit-rate 1M http://example.com/largefile.zip
+
+# Show request and response headers
+curl -v http://example.com
+
+# Set cookie
+curl --cookie "name=value" http://example.com
+
+# Follow location headers but not other headers
+curl -L --max-redirs 1 http://example.com
+
+# Send JSON data
+curl -X POST http://example.com/api -H "Content-Type: application/json" -d '{"key": "value"}'
+
+# Display only response headers
+curl -I http://example.com
+
+# Show download progress
+curl -# -O http://example.com/largefile.zip
+
+# Send XML data
+curl -X POST http://example.com/api -H "Content-Type: application/xml" -d "<data>value</data>"
+
+# Enable verbose mode
+curl --verbose http://example.com
+
+# Set custom request headers
+curl -H "X-My-Header: Value" http://example.com
+
+# Set custom user agent
+curl -A "MyCustomUserAgent" http://example.com
+
+# Set referer header
+curl -e "http://referer.com" http://example.com
+
+# Set custom HTTP method
+curl -X PUT http://example.com/resource
+
+# Set output file name
+curl -o output.txt http://example.com
+
+# Follow redirects with a maximum number of hops
+curl -L --max-redirs 5 http://example.com
+
+# Set cookie file
+curl --cookie-jar cookies.txt http://example.com
+
+# Include request headers in the output
+curl --include http://example.com
+
+# Set custom content type
+curl -H "Content-Type: application/xml" http://example.com
+
+# Send form data
+curl --data "name=value&age=30" http://example.com/form
+
+# Specify multiple URLs
+curl http://example.com/page1 http://example.com/page2
+
+# Set custom timeout
+curl --connect-timeout 10 http://example.com
+
+# Display only response status code
+curl -w "%{http_code}\n" -o /dev/null -s http://example.com
+
+# Upload a file
+curl -F "file=@localfile.txt" http://example.com/upload
+
+# Use a proxy
+curl -x http://proxy.example.com:8080 http://example.com
+
+# Disable progress meter
+curl --silent http://example.com
+
+# Set request body from a file
+curl -X POST -d @data.txt http://example.com
+
+# Specify multiple headers
+curl -H "Header1: Value1" -H "Header2: Value2" http://example.com
+
+# Print output to stdout
+curl http://example.com
+
+# Print output to stderr
+curl -s http://example.com >&2
+
+# Use an IPv4 address
+curl -4 http://example.com
+
+# Use an IPv6 address
+curl -6 http://example.com
+
+# Print response headers only
+curl -I http://example.com
+
+# Display timing details
+curl -w "@timing-format.txt" -o /dev/null -s http://example.com
+
+# Print output with a specified character set
+curl --output output.html --remote-header-name http://example.com
+
+# Set a custom header with a variable value
+curl -H "Authorization: Bearer $TOKEN" http://example.com
+
+# Send data using PUT method
+curl -X PUT --data "data to PUT" http://example.com/resource
+
+# Display the total time taken
+curl -w "\ntotal time: %{time_total}s\n" -o /dev/null -s http://example.com
+
+# Follow redirects and display response headers only
+curl -sIL http://example.com
+
+# Display response body only
+curl -s http://example.com | grep -v "^<"
+
+# Set a custom request method with data
+curl -X DELETE -d "id=123" http://example.com/resource
+
+# Print verbose output to a file
+curl -v -o output.txt http://example.com 2> verbose.txt
+
+# Set custom certificate authority
+curl --cacert /path/to/cacert.pem https://example.com
+
+# Display IP address and port number
+curl -w "local_ip: %{local_ip}\nlocal_port: %{local_port}\nremote_ip: %{remote_ip}\nremote_port: %{remote_port}\n" -o /dev/null -s http://example.com
+
+# Send data using PATCH method
+curl -X PATCH -d "data to patch" http://example.com/resource
+
+# Set the content type explicitly for a multipart form upload
+curl -F "file=@localfile.txt;type=text/plain" http://example.com/upload
+
+# Retry a failed request
+curl --retry 3 http://example.com
+
+# Resume a partial download
+curl -C - -O http://example.com/largefile.zip
+
+# Print the response code and the time taken
+curl -w "Response code: %{response_code}, Time taken: %{time_total}s\n" -o /dev/null -s http://example.com
+
+# Send a JSON file as data
+curl -X POST -d @data.json http://example.com/api
+
+# Use HTTP/2
+curl --http2 http://example.com
+
+# Ignore content-length header
+curl --ignore-content-length http://example.com
+
+# Set the maximum time the request is allowed to take
+curl --max-time 10 http://example.com
+
+# Set the referer header
+curl --referer http://example.com http://example.com/resource
+
+# Set the output file name dynamically based on the response headers
+curl -O -J http://example.com/download
+
+# Set the output file name dynamically based on the URL
+curl -O -J -L http://example.com/download
+
+# Use an HTTP proxy with authentication
+curl -x user:password@proxy.example.com:8080 http://example.com
+
+# Send data using a specific content type
+curl -X POST -H "Content-Type: application/json" -d '{"key": "value"}' http://example.com/api
+
+# Print only the HTTP headers
+curl -I http://example.com
+
+# Use a SOCKS5 proxy
+curl --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Print the URL and the response code
+curl -w "URL: %{url_effective}, Response code: %{response_code}\n" -o /dev/null -s http://example.com
+
+# Set a custom request header with a file
+curl -H "$(cat headers.txt)" http://example.com
+
+# Display response body only with verbose output
+curl -v http://example.com 2>&1 | grep -v "^*"
+
+# Set a custom timeout for the entire operation
+curl --max-time 60 http://example.com
+
+# Print the response code, size, and time taken
+curl -w "Response code: %{response_code}, Size: %{size_download} bytes, Time taken: %{time_total}s\n" -o /dev/null -s http://example.com
+
+# Use a SOCKS4 proxy
+curl --socks4 proxy.example.com:1080 http://example.com
+
+# Send data using a file
+curl -X POST --data-binary @data.txt http://example.com/api
+
+# Use HTTP/1.0
+curl --http1.0 http://example.com
+
+# Send data as a URL-encoded form
+curl -d "key1=value1&key2=value2" http://example.com/api
+
+# Display the response headers and the response body
+curl -i http://example.com
+
+# Send data using a JSON file
+curl -X POST -d @data.json -H "Content-Type: application/json" http://example.com/api
+
+# Use a custom DNS server
+curl --dns-servers 8.8.8.8 http://example.com
+
+# Send data using a text file
+curl -X POST --data @data.txt http://example.com/api
+
+# Print the total time, connection time, and download time
+curl -w "Total time: %{time_total}s, Connection time: %{time_connect}s, Download time: %{time_starttransfer}s\n" -o /dev/null -s http://example.com
+
+# Use HTTP/1.1
+curl --http1.1 http://example.com
+
+# Print the effective URL after following redirects
+curl -w "%{url_effective}\n" -o /dev/null -s http://example.com
+
+# Use a SOCKS4a proxy
+curl --socks4a proxy.example.com:1080 http://example.com
+
+# Send data as a multipart form
+curl -F "key1=value1" -F "key2=value2" http://example.com/api
+
+# Use HTTP/2.0
+curl --http2.0 http://example.com
+
+# Print the request headers and the response headers
+curl -v -o /dev/null -s http://example.com
+
+# Use a SOCKS5 proxy with authentication
+curl --socks5-user user:password proxy.example.com:1080 http://example.com
+
+# Use HTTP/2.0 with prioritization
+curl --http2-prior-knowledge http://example.com
+
+# Send data using a JSON string
+curl -X POST -d '{"key": "value"}' -H "Content-Type: application/json" http://example.com/api
+
+# Use a SOCKS4 proxy with authentication
+curl --socks4a user:password@proxy.example.com:1080 http://example.com
+
+# Print the content type of the response
+curl -w "Content type: %{content_type}\n" -o /dev/null -s http://example.com
+
+# Use a SOCKS5 proxy with hostname resolution
+curl --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Send data using a raw request
+curl -X POST -d @data.txt http://example.com/api
+
+# Print the HTTP version used in the request and the response
+curl -w "Request HTTP version: %{http_version}\nResponse HTTP version: %{http_version}\n" -o /dev/null -s http://example.com
+
+# Use a SOCKS4 proxy with hostname resolution
+curl --socks4a proxy.example.com:1080 http://example.com
+
+# Print the response code, content type, and size
+curl -w "Response code: %{response_code}, Content type: %{content_type}, Size: %{size_download} bytes\n" -o /dev/null -s http://example.com
+
+# Use a SOCKS4a proxy with authentication
+curl --socks4a user:password@proxy.example.com:1080 http://example.com
+
+# Print the HTTP response status line
+curl -w "HTTP status line: %{http_version} %{http_code} %{http_reason_phrase}\n" -o /dev/null -s http://example.com
+
+# Send data using a raw request with a custom content type
+curl -X POST -H "Content-Type: application/xml" -d @data.xml http://example.com/api
+
+# Use a SOCKS4 proxy with hostname resolution and authentication
+curl --socks4a user:password@proxy.example.com:1080 http://example.com
+
+# Print the effective URL after following redirects with verbose output
+curl -L -w "Effective URL: %{url_effective}\n" -o /dev/null -s http://example.com
+
+# Print the effective URL after following redirects with verbose output to a file
+curl -L -w "Effective URL: %{url_effective}\n" -o /dev/null -s http://example.com > output.txt
+
+# Print the total time, connect time, and download time with verbose output
+curl -w "Total time: %{time_total}s, Connect time: %{time_connect}s, Download time: %{time_starttransfer}s\n" -o /dev/null -s http://example.com
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Print the request and response headers with verbose output
+curl -v -o /dev/null -s http://example.com
+
+# Print the response body only with verbose output
+curl -v http://example.com 2>&1 | grep -v "^*"
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Print the response body only with verbose output
+curl -v http://example.com 2>&1 | grep -v "^*"
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Print the response body only with verbose output
+curl -v http://example.com 2>&1 | grep -v "^*"
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Print the response body only with verbose output
+curl -v http://example.com 2>&1 | grep -v "^*"
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Print the response body only with verbose output
+curl -v http://example.com 2>&1 | grep -v "^*"
