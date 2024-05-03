@@ -354,3 +354,51 @@ curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http:/
 
 # Print the response body only with verbose output
 curl -v http://example.com 2>&1 | grep -v "^*"
+
+# Show download progress bar
+curl -# -O http://example.com/largefile.zip
+
+# Print verbose output to a file
+curl -v -o output.txt http://example.com 2> verbose.txt
+
+# Send a file with a custom filename as POST data
+curl -F "file=@localfile.txt;filename=customname.txt" http://example.com/upload
+
+# Set the output file name dynamically based on the URL
+curl -O -J http://example.com/download
+
+# Set the output file name dynamically based on the response headers
+curl -O -J -L http://example.com/download
+
+# Use a SOCKS4 proxy with authentication
+curl --socks4 user:password@proxy.example.com:1080 http://example.com
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Use a SOCKS5 proxy with authentication
+curl --socks5 user:password@proxy.example.com:1080 http://example.com
+
+# Use a SOCKS4a proxy with authentication
+curl --socks4a user:password@proxy.example.com:1080 http://example.com
+
+# Use a SOCKS5 proxy with authentication and hostname resolution
+curl --socks5-user user:password --socks5-hostname proxy.example.com:1080 http://example.com
+
+# Use a SOCKS5 proxy with authentication
+curl --socks5 user:password@proxy.example.com:1080 http://example.com
+
+# Use a SOCKS4a proxy with authentication
+curl --socks4a user:password@proxy.example.com:1080 http://example.com
+
+# Set a custom header with a variable value
+curl -H "Authorization: Bearer $TOKEN" http://example.com
+
+# Set a custom request header with a file
+curl -H "$(cat headers.txt)" http://example.com
+
+# Set custom certificate authority
+curl --cacert /path/to/cacert.pem https://example.com
+
+# Use an HTTP proxy with authentication
+curl -x user:password@proxy.example.com:8080 http://example.com
