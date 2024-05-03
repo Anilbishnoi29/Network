@@ -1,0 +1,77 @@
+# Basic Domain Name Resolution
+nslookup example.com
+
+# Reverse DNS Lookup
+nslookup 192.0.2.1
+
+# Query a Specific DNS Server
+nslookup example.com dns.server.ip.address
+
+# Query for Mail Exchange (MX) Records
+set type=mx
+example.com
+
+# Query for Name Server (NS) Records
+set type=ns
+example.com
+
+# Query for Address (A) Records
+set type=a
+example.com
+
+# Query for IPv6 Address (AAAA) Records
+set type=aaaa
+example.com
+
+# Query for Start of Authority (SOA) Record
+set type=soa
+example.com
+
+# Query for Canonical Name (CNAME) Records
+set type=cname
+example.com
+
+# Query for Text (TXT) Records
+set type=txt
+example.com
+
+# Query for Pointer (PTR) Records
+set type=ptr
+192.0.2.1
+
+# Query for All Records (ANY)
+set type=any
+example.com
+
+# Query for Mail Destination (MD) Records
+set type=md
+example.com
+
+# Query for Mail Forwarder (MF) Records
+set type=mf
+example.com
+
+# Query for Mail Group (MG) Records
+set type=mg
+example.com
+
+# Query for Mail Information (MINFO) Records
+set type=minfo
+example.com
+
+# Query for Mailbox (MB) Records
+set type=mb
+example.com
+
+# Query for Mail Exchange (MX) Records and Perform Additional Lookups
+set type=mx
+set debug
+example.com
+
+# Query for All Records (ANY) and Perform Additional Lookups
+set type=any
+set debug
+example.com
+
+# Specify a Non-Interactive Mode Command Directly
+nslookup -type=mx example.com
