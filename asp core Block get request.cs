@@ -12,3 +12,7 @@ app.Use(async (context, next) =>
 
     await next.Invoke();
 });
+
+
+
+\\\ allow get request make a attribute for post methods
